@@ -1,19 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Rowdies:wght@300;400;700&display=swap');
+
 :root {
     --color-1: #F2055C;
     --color-2: #F24182;
     --color-3: #049DD9;
     --color-4: #F2B705;
     --color-5: #F2EBDC;
+    --color-6: #373737;
+    --color-7: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    font-family: "Rowdies", sans-serif;
 }
 
 body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
     background-color: var(--color-5);
     color: var(--color-3);
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    background-color: var(--color-3);
+    color: var(--color-7);
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 35%;
+}
+
+.game-dog {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 35px;
+    
+}
+
+.mini-games, .images, .about {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer {
+    font-weight: bold;
+    width: 55%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
 }
 
-img {
-    border-radius: 15px;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 92%;
+    color: #373737;
+}
+
+.text-content {
+    margin-top: 100px;
+    height: 50%;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 2rem;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.fetch-dog {
+    display: flex;
+    margin-bottom: 50px;
+    height: 70%;
+}
+
+.description-dog, .more-games {
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.name-dog {
+    color: #F2055C;
+    font-weight: bolder;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    padding: 5px;
+}
+
+.img-dog {
+    margin-left: 15rem;
+}
+
+#img {
+    min-width: 400px;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
 }
