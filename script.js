@@ -20,4 +20,22 @@ async function getInfoBreeds() {
     }
 }
 
+const test = document.getElementById('test');
+const subOptions = document.getElementById('sub-options');
+test.addEventListener('click', listeSubOptions)
+
+async function listeSubOptions() {
+    const arrow = document.getElementById('arrow')
+
+    if (subOptions.style.display === 'none') {
+        subOptions.style.display = ''
+        arrow.style.transform = 'translate(0, 0.4rem) rotate(180deg)'
+    } else {
+        subOptions.style.display = 'none'
+        arrow.style.transform = 'translate(0, 0rem) rotate(0deg)'
+    }
+}
+
+listeSubOptions()
+
 getInfoBreeds()
