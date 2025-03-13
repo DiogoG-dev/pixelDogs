@@ -103,6 +103,10 @@ footer {
     margin-bottom: 20px;
 }
 
+.info-dog {
+    width: 55%;
+}
+
 .name-dog {
     color: #F2055C;
     font-weight: bolder;
@@ -110,13 +114,16 @@ footer {
     padding: 5px;
 }
 
-.img-dog {
-    margin-left: 18%;
-}
-
 #img {
     min-width: 400px;
     max-width: 100%;
     height: auto;
     max-height: 350px;
+}
+
+i {
+    font-size: 32px;
+    background-color: #049DD9;
+    margin: 0;
+    padding: 0;
 }
