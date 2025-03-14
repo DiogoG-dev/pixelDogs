@@ -43,12 +43,12 @@ miniGameContainer.addEventListener('click', listeSubOptions)
 async function listeSubOptions() {
     const arrowMiniGame = document.getElementById('arrow-mini-game')
 
-    if (subOptions.style.display === 'none') {
-        subOptions.style.display = ''
-        arrowMiniGame.style.transform = 'translate(0, 0.4rem) rotate(180deg)'
-    } else {
+    if (subOptions.style.display === 'block') {
         subOptions.style.display = 'none'
         arrowMiniGame.style.transform = 'translate(0, 0rem) rotate(0deg)'
+    } else {
+        subOptions.style.display = 'block'
+        arrowMiniGame.style.transform = 'translate(0, 0.4rem) rotate(180deg)'
     }
 }
 

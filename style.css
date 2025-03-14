@@ -70,6 +70,9 @@ body {
 }
 
 /* Sub-Opções */
+.sub-options {
+    display: none;
+}
 .sub-options a h3 {
     font-size: 20px;
     margin-left: 25px;
