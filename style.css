@@ -42,14 +42,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* Logo */
 .game-dog {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-top: 35px;
-    
 }
 
 /* Opções */
@@ -59,13 +59,12 @@ body {
 }
 
 .mini-games, .images, .about {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: bold;
 }
 
 #arrow-mini-game {
-    font-size: 32px;
-    background-color: var(--color-3);
+    font-size: 1.7rem;
     margin-left: 15px;
     transition: 0.3s ease;
 }
@@ -74,8 +73,9 @@ body {
 .sub-options {
     display: none;
 }
+
 .sub-options a h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 25px;
 }
 
@@ -95,15 +95,101 @@ footer {
     border-radius: 0 10px 10px 0;
     width: 50px;
     height: 60px;
-    margin-top: 25px;
+    margin-top: 35px;
 }
 
 #arrow-side-bar {
     background-color: transparent;
     color: var(--color-7);
-    font-size: 48px;
+    font-size: 40px;
 }
 
 iframe {
     width: 100%;
+}
+
+/* Notebook */
+@media (max-width: 1400px) {
+    .side-bar {
+        width: 23%;
+    }
+
+    .game-dog {
+        font-size: 1.7rem;
+    }
+
+    .mini-games, .images, .about {
+        font-size: 1.4rem;
+    }
+    
+    #arrow-mini-game {
+        font-size: 1.5rem;
+        margin-left: 5px;
+    }
+
+    .close-open-side-bar {
+        width: 37px;
+        height: 45px;
+        margin-top: 33px;
+    }
+
+    #arrow-side-bar {
+        background-color: transparent;
+        color: var(--color-7);
+        font-size: 32px;
+    }
+
+    .sub-options a h3 {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .side-bar {
+        position: fixed;
+        height: 100vh;
+    }
+    .game-dog {
+        font-size: 1.7rem;
+    }
+
+    .mini-games, .images, .about {
+        font-size: 1.4rem;
+    }
+    
+    #arrow-mini-game {
+        font-size: 1.5rem;
+        margin-left: 5px;
+    }
+
+    .close-open-side-bar {
+        width: 37px;
+        height: 45px;
+        margin-top: 33px;
+    }
+
+    #arrow-side-bar {
+        background-color: transparent;
+        color: var(--color-7);
+        font-size: 32px;
+    }
+
+    .sub-options a h3 {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+/* Smartphone Retrato*/
+@media (max-width: 768px) {
 }
