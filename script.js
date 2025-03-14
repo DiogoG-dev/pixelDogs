@@ -1,18 +1,33 @@
 let currentUrl = 'https://dog.ceo/api/';
 
-async function getInfoBreeds() {
+window.onload = async () => {
     try {
-        const response = await fetch(`${currentUrl}breeds/image/random`);
+        await getInfoRandomDog(currentUrl)
+    } catch (error) {
+        console.log(`Erro ao carregar informações: `+ error)
+    }
+}
+
+// Buscar Informações Sobre o Cachorro
+async function getInfoRandomDog(Url) {
+    try {
+        const response = await fetch(`${Url}breeds/image/random`);
         const responseJson = await response.json();
 
-        const urlImg = responseJson.message;
-        const base = "https://images.dog.ceo/breeds/";
-        const twoPath = urlImg.replace(base, "")
-        let breed = twoPath.split("/")[0];
+        const imgUrl = responseJson.message;
+        const baseUrl = "https://images.dog.ceo/breeds/";
 
+        // Exclui o conteúdo até a url da imagem
+        const mainPath = imgUrl.replace(baseUrl, "")
+
+        // Pega o elemento anterior a "/" e coloca em caixa alta
+        let breed = mainPath.split("/")[0];
         breed = breed.toUpperCase()
 
-        document.getElementById('img').src = urlImg;
+        // Substitui o "src" do elemento "img" pela url da imagem
+        document.getElementById('img').src = imgUrl;
+
+        // Substitui o conteúdo do elemento "name-dog" pela raça obtida
         let nameDog = document.getElementById('name-dog')
         nameDog.innerText = breed
     } catch (error) {
@@ -20,6 +35,7 @@ async function getInfoBreeds() {
     }
 }
 
+/* Comportamento da Arrow em "sub-options" */
 const miniGameContainer = document.getElementById('mini-game-container');
 const subOptions = document.getElementById('sub-options');
 miniGameContainer.addEventListener('click', listeSubOptions)
@@ -36,6 +52,7 @@ async function listeSubOptions() {
     }
 }
 
+/* Comportamento da Arrow em "side-bar" */
 const buttonSideBar = document.getElementById('close-open-side-bar');
 const sideBar = document.getElementById('side-bar');
 buttonSideBar.addEventListener('click', listeSideBar)
@@ -53,7 +70,3 @@ async function listeSideBar() {
         mainContainer.style.width = '100%'
     }
 }
-
-listeSubOptions()
-
-getInfoBreeds()
