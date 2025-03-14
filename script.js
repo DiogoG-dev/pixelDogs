@@ -1,41 +1,4 @@
-let currentUrl = 'https://dog.ceo/api/';
-
-window.onload = async () => {
-    try {
-        await getInfoRandomDog(currentUrl)
-    } catch (error) {
-        console.log(`Erro ao carregar informações: `+ error)
-    }
-}
-
-// Buscar Informações Sobre o Cachorro
-async function getInfoRandomDog(Url) {
-    try {
-        const response = await fetch(`${Url}breeds/image/random`);
-        const responseJson = await response.json();
-
-        const imgUrl = responseJson.message;
-        const baseUrl = "https://images.dog.ceo/breeds/";
-
-        // Exclui o conteúdo até a url da imagem
-        const mainPath = imgUrl.replace(baseUrl, "")
-
-        // Pega o elemento anterior a "/" e coloca em caixa alta
-        let breed = mainPath.split("/")[0];
-        breed = breed.toUpperCase()
-
-        // Substitui o "src" do elemento "img" pela url da imagem
-        document.getElementById('img').src = imgUrl;
-
-        // Substitui o conteúdo do elemento "name-dog" pela raça obtida
-        let nameDog = document.getElementById('name-dog')
-        nameDog.innerText = breed
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-/* Comportamento da Arrow em "sub-options" */
+/* Comportamento da Arrow em "sub-options" e "sub-options"*/
 const miniGameContainer = document.getElementById('mini-game-container');
 const subOptions = document.getElementById('sub-options');
 miniGameContainer.addEventListener('click', listeSubOptions)
@@ -52,14 +15,13 @@ async function listeSubOptions() {
     }
 }
 
-/* Comportamento da Arrow em "side-bar" */
+/* Comportamento da Arrow em "side-bar"  e "side-bar"*/
 const buttonSideBar = document.getElementById('close-open-side-bar');
 const sideBar = document.getElementById('side-bar');
 buttonSideBar.addEventListener('click', listeSideBar)
 
 async function listeSideBar() {
     const arrowSideBar = document.getElementById('arrow-side-bar')
-    const mainContainer = document.getElementById('main-container')
 
     if (sideBar.style.display === 'none') {
         sideBar.style.display = ''
@@ -67,6 +29,5 @@ async function listeSideBar() {
     } else {
         sideBar.style.display = 'none'
         arrowSideBar.style.transform = 'translate(0, 0) rotate(180deg)'
-        mainContainer.style.width = '100%'
     }
 }

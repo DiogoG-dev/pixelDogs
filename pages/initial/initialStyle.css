@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+    --color-1: #F2055C;
+    --color-2: #F24182;
+    --color-3: #049DD9;
+    --color-4: #F2B705;
+    --color-5: #F2EBDC;
+    --color-6: #373737;
+    --color-7: #FFFFFF;
+    --color-8: rgba(0, 0, 0, 0.33);
+}
+
+* {
+    margin: 0;
+    font-family: "Rowdies", sans-serif;
+    text-decoration: none;
+    color: var(--color-7);
+}
+
+/* Conteúdo Principal */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-5);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    margin: 80px 50px;
+}
+
+/* Descrição da Página */
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-6);
+}
+
+.paragraph {
+    font-size: 32px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: var(--color-6);
+}
+
+/* Buscar Dog */
+.fetch-dog {
+    display: flex;
+    margin-top: 50px;
+}
+
+.description-dog, .more-games {
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: var(--color-6);
+}
+
+.name-dog {
+    color: var(--color-1);
+    font-weight: bolder;
+    border: 1px solid var(--color-8);
+    padding: 5px;
+}
+
+.info-dog {
+    width: 35%;
+}
+
+/* Imagem */
+.img-dog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.mini-game-container {
+    display: flex;
+}

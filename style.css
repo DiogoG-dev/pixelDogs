@@ -54,6 +54,7 @@ body {
 
 /* Opções */
 .mini-game-container {
+    display: flex;
     margin-top: 100px;
 }
 
@@ -103,75 +104,6 @@ footer {
     font-size: 48px;
 }
 
-/* Conteúdo Principal */
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+iframe {
     width: 100%;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    margin: 80px 50px;
-}
-
-/* Descrição da Página */
-.title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--color-6);
-}
-
-.paragraph {
-    font-size: 32px;
-    font-weight: lighter;
-    margin-bottom: 10px;
-    color: var(--color-6);
-}
-
-/* Buscar Dog */
-.fetch-dog {
-    display: flex;
-    margin-top: 50px;
-}
-
-.description-dog, .more-games {
-    font-size: 24px;
-    font-weight: lighter;
-    margin-bottom: 20px;
-    color: var(--color-6);
-}
-
-.name-dog {
-    color: var(--color-1);
-    font-weight: bolder;
-    border: 1px solid var(--color-8);
-    padding: 5px;
-}
-
-.info-dog {
-    width: 35%;
-}
-
-/* Imagem */
-.img-dog {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
-
-#img {
-    max-width: 100%;
-    height: auto;
-    max-height: 400px;
-}
-
-.mini-game-container {
-    display: flex;
 }
