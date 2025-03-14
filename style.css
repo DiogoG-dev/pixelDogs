@@ -8,6 +8,7 @@
     --color-5: #F2EBDC;
     --color-6: #373737;
     --color-7: #FFFFFF;
+    --color-8: rgba(0, 0, 0, 0.33);
 }
 
 * {
@@ -25,12 +26,13 @@ body {
     color: var(--color-3);
 }
 
+/* Barra Lateral */
 .side-bar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 23%;
+    width: 20%;
     background-color: var(--color-3);
     color: var(--color-7);
     transition: 0.3s ease;
@@ -42,6 +44,7 @@ body {
     justify-content: space-between;
 }
 
+/* Logo */
 .game-dog {
     font-size: 3rem;
     font-weight: bold;
@@ -49,6 +52,7 @@ body {
     
 }
 
+/* Opções */
 .mini-game-container {
     margin-top: 100px;
 }
@@ -58,12 +62,45 @@ body {
     font-weight: bold;
 }
 
+#arrow-mini-game {
+    font-size: 32px;
+    background-color: var(--color-3);
+    margin-left: 15px;
+    transition: 0.3s ease;
+}
+
+/* Sub-Opções */
+.sub-options a h3 {
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+/* Rodapé */
 footer {
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Abrir/fechar Sidebar */
+.close-open-side-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-3);
+    border-radius: 0 10px 10px 0;
+    width: 50px;
+    height: 60px;
+    margin-top: 25px;
+}
+
+#arrow-side-bar {
+    background-color: transparent;
+    color: var(--color-7);
+    font-size: 48px;
+}
+
+/* Conteúdo Principal */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -79,10 +116,7 @@ footer {
     margin: 80px 50px;
 }
 
-.text-content {
-    margin-bottom: 50px;
-}
-
+/* Descrição da Página */
 .title {
     font-size: 48px;
     font-weight: bold;
@@ -97,8 +131,10 @@ footer {
     color: var(--color-6);
 }
 
+/* Buscar Dog */
 .fetch-dog {
     display: flex;
+    margin-top: 50px;
 }
 
 .description-dog, .more-games {
@@ -109,9 +145,9 @@ footer {
 }
 
 .name-dog {
-    color: #F2055C;
+    color: var(--color-1);
     font-weight: bolder;
-    border: 1px solid rgba(0, 0, 0, 0.33);
+    border: 1px solid var(--color-8);
     padding: 5px;
 }
 
@@ -119,6 +155,7 @@ footer {
     width: 35%;
 }
 
+/* Imagem */
 .img-dog {
     display: flex;
     justify-content: center;
@@ -134,33 +171,4 @@ footer {
 
 .mini-game-container {
     display: flex;
-}
-
-i {
-    font-size: 32px;
-    background-color: #049DD9;
-    margin-left: 15px;
-    transition: 0.3s ease;
-    transform: translate(0, 0rem) rotate(0deg); /*translate(0, 0.4rem) rotate(180deg)*/
-}
-
-.sub-options nav {
-    font-size: 20px;
-    margin-left: 20px;
-}
-
-.close-open-side-bar {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-3);
-    border-radius: 0 10px 10px 0;
-    width: 50px;
-    height: 60px;
-    margin-top: 25px;
-}
-
-.close-open-side-bar i {
-    background-color: transparent;
-    color: #F2EBDC;
-    font-size: 48px;
 }
