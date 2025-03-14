@@ -20,36 +20,36 @@ async function getInfoBreeds() {
     }
 }
 
-const test = document.getElementById('test');
+const miniGameContainer = document.getElementById('mini-game-container');
 const subOptions = document.getElementById('sub-options');
-test.addEventListener('click', listeSubOptions)
+miniGameContainer.addEventListener('click', listeSubOptions)
 
 async function listeSubOptions() {
-    const arrowOne = document.getElementById('arrowOne')
+    const arrowMiniGame = document.getElementById('arrow-mini-game')
 
     if (subOptions.style.display === 'none') {
         subOptions.style.display = ''
-        arrowOne.style.transform = 'translate(0, 0.4rem) rotate(180deg)'
+        arrowMiniGame.style.transform = 'translate(0, 0.4rem) rotate(180deg)'
     } else {
         subOptions.style.display = 'none'
-        arrowOne.style.transform = 'translate(0, 0rem) rotate(0deg)'
+        arrowMiniGame.style.transform = 'translate(0, 0rem) rotate(0deg)'
     }
 }
 
-const test2 = document.getElementById('test2');
+const buttonSideBar = document.getElementById('close-open-side-bar');
 const sideBar = document.getElementById('side-bar');
-test2.addEventListener('click', listeSideBar)
+buttonSideBar.addEventListener('click', listeSideBar)
 
 async function listeSideBar() {
-    const arrowTwo = document.getElementById('arrowTwo')
+    const arrowSideBar = document.getElementById('arrow-side-bar')
     const mainContainer = document.getElementById('main-container')
 
     if (sideBar.style.display === 'none') {
         sideBar.style.display = ''
-        arrowTwo.style.transform = 'translate(0, 0) rotate(0deg)'
+        arrowSideBar.style.transform = 'translate(0, 0) rotate(0deg)'
     } else {
         sideBar.style.display = 'none'
-        arrowTwo.style.transform = 'translate(0, 0) rotate(180deg)'
+        arrowSideBar.style.transform = 'translate(0, 0) rotate(180deg)'
         mainContainer.style.width = '100%'
     }
 }

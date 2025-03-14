@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Dogs</title>
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.0/css/all.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>Pixel Dogs</title>
 </head>
 <body>
-    <div class="side-bar" id="side-bar" style="display: none;">
-        <div class="nav-container">
-            <nav class="game-dog">Game Dog</nav>
+
+    <!-- Barra Lateral -->
+    <div class="side-bar" id="side-bar">
+        <nav class="nav-container">
+            <a href=""><h1 class="game-dog">Game Dog</h1></a>
             <div class="options">
-                <div class="test" id="test">
-                    <nav class="mini-games">Mini Games</nav><i class="fa-solid fa-sort-down" id="arrowOne"></i>
+                <div class="mini-game-container" id="mini-game-container">
+                    <h2 class="mini-games">Mini Games</h2>
+                    <i class="fa-solid fa-sort-down" id="arrow-mini-game"></i>
                 </div>
-                <div class="sub-options" id="sub-options" style="display: inline;">
-                    <nav>• Adivinha</nav>
-                    <nav>• Caça-Palavras</nav>
-                    <nav>• Quebra-Cabeça</nav>
-                    <nav>• O Intruso</nav>
+                <div class="sub-options" id="sub-options">
+                    <a href=""><h3>• Adivinha</h3></a>
+                    <a href=""><h3>• Caça-Palavras</h3></a>
+                    <a href=""><h3>• Quebra-Cabeça</h3></a>
+                    <a href=""><h3>• O Intruso</h3></a>
                 </div>
-                <nav class="images">Imagens</nav>
-                <nav class="about">Sobre</nav>
+                <a href=""><h2 class="images">Imagens</h2></a>
+                <a href=""><h2 class="about">Sobre</h2></a>
             </div>
-        </div>
+        </nav>
         <footer>Copyrigth © 2025 by Diogo Gabriel</footer>
     </div>
-    <div class="button-side-bar" id="test2">
-        <i class="fa-solid fa-caret-left" id="arrowTwo"></i>
+
+    <!-- Abrir/fechar Sidebar -->
+    <div class="close-open-side-bar" id="close-open-side-bar">
+        <i class="fa-solid fa-caret-left" id="arrow-side-bar"></i>
     </div>
+
+    <!-- Conteúdo Principal -->
     <main class="main-container" id="main-container">
-        <div class="main-content">
+        <section class="main-content">
             <div class="text-content">
-                <div class="title">Conheça as raças de Doguinhos pelo mundo a fora jogando!</div>
-                <div class="paragraph">Teste seus conhecimentos sobre raças de cachorros em jogos divertidos!</div>
-                <div class="paragraph">Adivinhe, monte quebra-cabeças e encontre o dog intruso enquanto aprende mais sobre nossos melhores amigos.</div>
-                <div class="paragraph">Pronto para o desafio?</div>
+                <h1 class="title">Conheça as raças de Doguinhos pelo mundo a fora jogando!</h1>
+                <p class="paragraph">Teste seus conhecimentos sobre raças de cachorros em jogos divertidos!</p>
+                <p class="paragraph">Adivinhe, monte quebra-cabeças e encontre o dog intruso enquanto aprende mais sobre nossos melhores amigos.</p>
+                <p class="paragraph">Pronto para o desafio?</p>
             </div>
+            
+            <!-- Buscar Dog -->
             <div class="fetch-dog">
                 <div class="info-dog">
-                    <div class="description-dog">Este é o <span class="name-dog" id="name-dog"></span>:</div>
-                    <div class="more-games">Veja mais em Mini Games...</div>
+                    <p class="description-dog">Este é o <span class="name-dog" id="name-dog"></span>:</p>
+                    <p class="more-games">Veja mais em Mini Games...</p>
                 </div>
                 <div class="img-dog">
                     <img id="img" src="" alt="">
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
