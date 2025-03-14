@@ -28,17 +28,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 25%;
+    width: 23%;
     background-color: var(--color-3);
     color: var(--color-7);
+    transition: 0.3s ease;
 }
 
 .nav-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    margin-left: 50px;
 }
 
 .game-dog {
@@ -67,7 +66,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 .main-content {
@@ -75,23 +74,22 @@ footer {
     flex-direction: column;
     justify-content: start;
     height: 100%;
-    width: 92%;
     color: #373737;
+    margin: 80px 50px;
 }
 
 .text-content {
-    margin-top: 100px;
     margin-bottom: 50px;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 48px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .paragraph {
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: lighter;
     margin-bottom: 10px;
 }
@@ -101,13 +99,9 @@ footer {
 }
 
 .description-dog, .more-games {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: lighter;
     margin-bottom: 20px;
-}
-
-.info-dog {
-    width: 55%;
 }
 
 .name-dog {
@@ -117,10 +111,21 @@ footer {
     padding: 5px;
 }
 
+.info-dog {
+    width: 35%;
+}
+
+.img-dog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
 #img {
     max-width: 100%;
     height: auto;
-    max-height: 350px;
+    max-height: 400px;
 }
 
 .test {
@@ -136,6 +141,26 @@ i {
 }
 
 .sub-options nav {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-left: 20px;
+}
+
+.button-side-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-3);
+    border-radius: 0 10px 10px 0;
+    width: 50px;
+    height: 60px;
+    margin-top: 25px;
+}
+
+.button-side-bar i {
+    background-color: transparent;
+    color: #F2EBDC;
+    font-size: 48px;
+}
+
+.test2 {
+    display: flex;
 }
