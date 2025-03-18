@@ -26,13 +26,19 @@ body {
     color: var(--color-3);
 }
 
+.side-bar-container {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+}
+
 /* Barra Lateral */
 .side-bar {
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 20%;
     background-color: var(--color-3);
     color: var(--color-7);
     transition: 0.3s ease;
@@ -111,15 +117,7 @@ iframe {
 /* Notebook */
 @media (max-width: 1400px) {
     .side-bar {
-        width: 23%;
-    }
-
-    .game-dog {
-        font-size: 1.7rem;
-    }
-
-    .mini-games, .images, .about {
-        font-size: 1.4rem;
+        width: 275px;
     }
     
     #arrow-mini-game {
@@ -134,55 +132,34 @@ iframe {
     }
 
     #arrow-side-bar {
-        background-color: transparent;
-        color: var(--color-7);
         font-size: 32px;
     }
 
-    .sub-options a h3 {
-        font-size: 16px;
-        margin-left: 25px;
-    }
-
     footer {
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
     .side-bar {
-        position: fixed;
-        height: 100vh;
+        width: 250px;
     }
+
     .game-dog {
-        font-size: 1.7rem;
+        font-size: 2.5rem;
     }
 
     .mini-games, .images, .about {
-        font-size: 1.4rem;
-    }
-    
-    #arrow-mini-game {
         font-size: 1.5rem;
-        margin-left: 5px;
-    }
-
-    .close-open-side-bar {
-        width: 37px;
-        height: 45px;
-        margin-top: 33px;
-    }
-
-    #arrow-side-bar {
-        background-color: transparent;
-        color: var(--color-7);
-        font-size: 32px;
     }
 
     .sub-options a h3 {
         font-size: 16px;
-        margin-left: 25px;
+    }
+
+    #arrow-side-bar {
+        font-size: 32px;
     }
 
     footer {
@@ -192,4 +169,25 @@ iframe {
 
 /* Smartphone Retrato*/
 @media (max-width: 768px) {
+    .side-bar {
+        width: 225px;
+    }
+
+    .game-dog {
+        font-size: 2.2rem;
+    }
+
+    .mini-games, .images, .about {
+        font-size: 1.4rem;
+    }
+
+    .sub-options a h3 {
+        font-size: 14px;
+    }
+
+    .close-open-side-bar {
+        width: 37px;
+        height: 45px;
+        margin-top: 33px;
+    }
 }
