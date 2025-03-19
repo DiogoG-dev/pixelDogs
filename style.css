@@ -33,15 +33,31 @@ body {
 }
 
 /* Barra Lateral */
+.side-bar-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Sidebar oculto padrão */
 .side-bar {
     width: 300px;
-    display: none;
+    height: 100vh;
+    position: fixed;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-3);
     color: var(--color-7);
-    transition: 0.3s ease;
+
+    /* Ocultar sidebar */
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Classe para exibir a sidebar */
+.side-bar.show {
+    transform: translateX(0);
 }
 
 .nav-container {
@@ -75,6 +91,10 @@ body {
     transition: 0.3s ease;
 }
 
+.game-dog, .mini-game-container, .sub-options, .images, .about {
+    cursor: pointer;
+}
+
 /* Sub-Opções */
 .sub-options {
     display: none;
@@ -102,6 +122,16 @@ footer {
     width: 50px;
     height: 60px;
     margin-top: 35px;
+    position: fixed;
+    left: 300px;
+    top: 10px;
+    cursor: pointer;
+    transition: left 0.5s ease-in-out;
+}
+
+/* Ajustar posição quando a sidebar fechar */
+.side-bar:not(.show) + .close-open-side-bar {
+    left: 0px;
 }
 
 #arrow-side-bar {
@@ -109,6 +139,7 @@ footer {
     color: var(--color-7);
     font-size: 40px;
     transform: translate(0, 0) rotate(180deg);
+    transition: transform 0.3s ease-in-out;
 }
 
 iframe {
