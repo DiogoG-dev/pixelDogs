@@ -1,9 +1,9 @@
 /* Comportamento da Arrow em "sub-options" e "sub-options"*/
 const miniGameContainer = document.getElementById('mini-game-container');
-const subOptions = document.getElementById('sub-options');
 miniGameContainer.addEventListener('click', listeSubOptions)
 
-async function listeSubOptions() {
+function listeSubOptions() {
+    const subOptions = document.getElementById('sub-options');
     const arrowMiniGame = document.getElementById('arrow-mini-game')
 
     if (subOptions.style.display === 'block') {
@@ -17,17 +17,27 @@ async function listeSubOptions() {
 
 /* Comportamento da Arrow em "side-bar"  e "side-bar"*/
 const buttonSideBar = document.getElementById('close-open-side-bar');
-const sideBar = document.getElementById('side-bar');
 buttonSideBar.addEventListener('click', listeSideBar)
 
-async function listeSideBar() {
+function listeSideBar() {
+    const sideBar = document.getElementById('side-bar');
     const arrowSideBar = document.getElementById('arrow-side-bar')
 
-    if (sideBar.style.display === 'none') {
-        sideBar.style.display = ''
-        arrowSideBar.style.transform = 'translate(0, 0) rotate(0deg)'
-    } else {
+    if (sideBar.style.display === 'flex') {
         sideBar.style.display = 'none'
         arrowSideBar.style.transform = 'translate(0, 0) rotate(180deg)'
+    } else {
+        sideBar.style.display = 'flex'
+        arrowSideBar.style.transform = 'translate(0, 0) rotate(0deg)'
+    }
+}
+
+const guessOption = document.getElementById('guess')
+guessOption.addEventListener('click', guessNav)
+
+function guessNav() {
+    const iframeContent = document.getElementById('iframeContent')
+    if (iframeContent.src !== './pages/guessMiniGame/guess.html') {
+        iframeContent.src = './pages/guessMiniGame/guess.html'
     }
 }
