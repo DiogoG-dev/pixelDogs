@@ -1,7 +1,10 @@
 let currentUrl = 'https://dog.ceo/api/breeds/image/random/4';
 
+const setRound = document.getElementById('round-count')
+
 window.onload = async () => {
     try {
+        loandRound()
         await getDataForGame(currentUrl)
     } catch (error) {
         console.log(error)
@@ -44,7 +47,28 @@ async function getDataForGame(url) {
 function checkAnswer(selected, correct) {
     if(selected === correct) {
         alert('Acertooooooooooou!')
+        let contador = Number(localStorage.getItem('roundCount')) || 1;
+        contador += 1;
+
+        localStorage.setItem('roundCount', contador)
+
+        setRound.innerText = localStorage.getItem('roundCount')
+        getDataForGame(currentUrl)
     } else {
         alert('Errooooooooooooou!')
+
+        contador = 1
+        localStorage.setItem('roundCount', contador)
+
+        setRound.innerText = localStorage.getItem('roundCount')
+        getDataForGame(currentUrl)
+    }
+}
+
+function loandRound() {
+    if(localStorage.getItem('roundCount')) {
+        setRound.innerText = localStorage.getItem('roundCount')
+    } else {
+        setRound.innerText = 1
     }
 }
