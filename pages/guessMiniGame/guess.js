@@ -15,25 +15,43 @@ async function getDataForGame(url) {
     const responseJson = await response.json();
     infoDogs = responseJson.message;
 
-    const ramdomDogUrl = infoDogs[Math.floor(Math.random() * infoDogs.length)];
+    // Escolhe um cachorro aleatório
+    const randomDogUrl = infoDogs[Math.floor(Math.random() * infoDogs.length)];
 
+    // Define a imagem no jogo
     const imgDog = document.getElementById('img-dog');
-    imgDog.style.backgroundImage = `url(${ramdomDog})`;
+    imgDog.style.backgroundImage = `url(${randomDogUrl})`;
 
-    let alternaves = [];
+    // Extrai a raça do nome da URL
+    const regex = /breeds\/([^\/]+)\//;
+    const match = randomDogUrl.match(regex);
+    const correctBreed = match[1];
 
-    const firstAlternative = document.getElementById('first-alternative');
-    const secondAlternative = document.getElementById('second-alternative');
-    const thirdAlternative = document.getElementById('third-alternative');
-    const fourthAlternative = document.getElementById('fourth-alternative');
+    // Lista todas as raças
+    let alternatives = infoDogs.map(url => url.match(regex)[1]);
 
-    firstAlternative.innerText
-    alternaves.push(firstAlternative)
-    alternaves.push(secondAlternative)
-    alternaves.push(thirdAlternative)
-    alternaves.push(fourthAlternative)
+    // Embaralha as alternativas
+    alternatives = alternatives.sort(() => Math.random() - 0.5);
 
-    alternaves.sort( (a,b) => Math.random() -0.5)
+    // Define os botões com as alternativas
+    const buttons = [
+        document.getElementById('first-alternative'),
+        document.getElementById('second-alternative'),
+        document.getElementById('third-alternative'),
+        document.getElementById('fourth-alternative')
+    ];
 
-    console.log(alternaves)
+    buttons.forEach((button, index) => {
+        button.innerText = alternatives[index]; // Define o texto do botão
+        button.onclick = () => checkAnswer(alternatives[index], correctBreed); // Verifica a resposta ao clicar
+    });
+}
+
+// Função para verificar se a resposta está correta
+function checkAnswer(selected, correct) {
+    if (selected === correct) {
+        alert("✅ Correto!");
+    } else {
+        alert("❌ Errado! A resposta certa era " + correct);
+    }
 }
