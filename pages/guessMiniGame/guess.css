@@ -36,7 +36,7 @@
     width: 55%;
 }
 
-.roundCount {
+.round-count {
     margin: 15px 0 30px 0;
     color: #049DD9;
     text-align: center;
@@ -73,11 +73,10 @@ p {
     color: #F2055C;
 }
 
-.imgDog {
+.img-dog {
     width: 400px;
     height: 400px;
     background-size: cover;
-    background-image: url('https://images.dog.ceo/breeds/otterhound/n02091635_2603.jpg');
     border-radius: 5px;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
     margin-bottom: 40px;
