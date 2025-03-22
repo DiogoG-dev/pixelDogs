@@ -12,6 +12,7 @@ window.onload = async () => {
 
 /* Função buscar informações para o jogo */
 async function getDataForGame(url) {
+    loandPage(1)
     let infoDogs = [];
 
     const response = await fetch(url);
@@ -41,6 +42,7 @@ async function getDataForGame(url) {
         button.innerText = alternatives[index];
         button.onclick = () => checkAnswer(alternatives[index], correctBreed)
     })
+    loandPage(0)
 }
 
 // Função para verificar se a resposta está correta
@@ -103,5 +105,23 @@ function soltarConfete() {
         });
     } else {
         console.error("Biblioteca canvas-confetti não carregada!");
+    }
+}
+
+/* Função para mostrar o carregamento da página */
+function loandPage(value) {
+    const loader = document.getElementById('loader');
+
+    if(value === 0) {
+        const main = document.getElementById('main-container')
+        main.style.opacity = 1
+
+        loader.style.display = 'none'
+    }
+    if(value === 1) {
+        const main = document.getElementById('main-container')
+        main.style.opacity = 0.3
+
+        loader.style.display = 'flex'
     }
 }
