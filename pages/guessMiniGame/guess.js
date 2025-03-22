@@ -46,14 +46,16 @@ async function getDataForGame(url) {
 // Função para verificar se a resposta está correta
 function checkAnswer(selected, correct) {
     if(selected === correct) {
-        alert('Acertooooooooooou!')
+        openCloseCard()
+
+        const main = document.getElementById('main-container')
+        main.style.opacity = 0.3
+
         let contador = Number(localStorage.getItem('roundCount')) || 1;
         contador += 1;
 
         localStorage.setItem('roundCount', contador)
-
         setRound.innerText = localStorage.getItem('roundCount')
-        getDataForGame(currentUrl)
     } else {
         alert('Errooooooooooooou!')
 
@@ -71,4 +73,18 @@ function loandRound() {
     } else {
         setRound.innerText = 1
     }
+}
+
+function openCloseCard() {
+    const main = document.getElementById('main-container')
+    const card = document.getElementById('card');
+    card.style.display = 'flex';
+
+    const nextButton = document.getElementById('next-button')
+    nextButton.addEventListener('click', () => {
+        card.style.display = 'none'
+        main.style.opacity = 1
+        
+        getDataForGame(currentUrl)
+    })
 }

@@ -18,6 +18,13 @@
     color: var(--color-7);
 }
 
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-5);
+}
+
 /* Conteúdo Principal */
 .main-container {
     display: flex;
@@ -96,4 +103,84 @@ p {
     color: #FFFFFF;
     background-color: #F2055C;
     border-radius: 15px;
+}
+
+.card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    left: 50vw;
+    top: 50vh;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #dedede;
+    box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-card {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: 35%;
+    border-radius: 10px 10px 0 0;
+    background-color: #049DD9;
+}
+
+.card .header-card h2 {
+    margin-top: 35px;
+    color: #FFFFFF;
+}
+
+.card h2, .card p {
+    color: var(--color-6);
+}
+
+.medal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 13%;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: #F2055C;
+}
+
+i {
+    font-size: 64px;
+    background-color: #F2055C;
+    color: var(--color-7);
+}
+
+.main-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-card p {
+    margin: 0 25px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 25px;
+}
+
+.next-button {
+    width: 85px;
+    height: 23px;
+    padding: 13px 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    background-color: #F2055C;
 }
