@@ -1,5 +1,4 @@
-let currentUrl = 'https://dog.ceo/api/breeds/image/random/4';
-
+const currentUrl = 'https://dog.ceo/api/breeds/image/random/4';
 const setRound = document.getElementById('round-count')
 
 window.onload = async () => {
@@ -11,6 +10,7 @@ window.onload = async () => {
     }
 }
 
+/* Função buscar informações para o jogo */
 async function getDataForGame(url) {
     let infoDogs = [];
 
@@ -51,6 +51,8 @@ function checkAnswer(selected, correct) {
         const main = document.getElementById('main-container')
         main.style.opacity = 0.3
 
+        soltarConfete()
+
         let contador = Number(localStorage.getItem('roundCount')) || 1;
         contador += 1;
 
@@ -67,6 +69,7 @@ function checkAnswer(selected, correct) {
     }
 }
 
+/* Função para carregar o round do game */
 function loandRound() {
     if(localStorage.getItem('roundCount')) {
         setRound.innerText = localStorage.getItem('roundCount')
@@ -75,6 +78,7 @@ function loandRound() {
     }
 }
 
+/* Função para Abrir e Fechar o card */
 function openCloseCard() {
     const main = document.getElementById('main-container')
     const card = document.getElementById('card');
@@ -87,4 +91,17 @@ function openCloseCard() {
         
         getDataForGame(currentUrl)
     })
+}
+
+/* Função para lançar confetes */
+function soltarConfete() {
+    if (typeof confetti === "function") {
+        confetti({
+            particleCount: 2000,
+            spread: 360,
+            origin: { y: 0.4 }
+        });
+    } else {
+        console.error("Biblioteca canvas-confetti não carregada!");
+    }
 }
