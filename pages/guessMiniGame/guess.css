@@ -105,6 +105,7 @@ p {
     border-radius: 15px;
 }
 
+/* Card */
 .card {
     display: none;
     flex-direction: column;
@@ -168,6 +169,10 @@ i {
     margin: 0 25px;
 }
 
+.main-card p span {
+    color: #F2055C;
+}
+
 .button-container {
     width: 100%;
     display: flex;
@@ -196,9 +201,9 @@ i {
     border-top: 5px solid #049DD9;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-  }
+}
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}

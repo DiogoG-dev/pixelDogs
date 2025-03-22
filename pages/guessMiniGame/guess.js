@@ -1,5 +1,6 @@
 const currentUrl = 'https://dog.ceo/api/breeds/image/random/4';
 const setRound = document.getElementById('round-count')
+let contador = Number(localStorage.getItem('roundCount')) || 1;
 
 window.onload = async () => {
     try {
@@ -47,33 +48,24 @@ async function getDataForGame(url) {
 
 // Função para verificar se a resposta está correta
 function checkAnswer(selected, correct) {
-    if(selected === correct) {
-        openCloseCard()
+    if (selected === correct) {
+        openCloseCard('win')
 
-        const main = document.getElementById('main-container')
-        main.style.opacity = 0.3
-
-        soltarConfete()
-
-        let contador = Number(localStorage.getItem('roundCount')) || 1;
-        contador += 1;
-
-        localStorage.setItem('roundCount', contador)
-        setRound.innerText = localStorage.getItem('roundCount')
+        contador += 1;    
+        localStorage.setItem('roundCount', contador);
+        setRound.innerText = localStorage.getItem('roundCount');
     } else {
-        alert('Errooooooooooooou!')
+        openCloseCard('loss', correct)
 
-        contador = 1
-        localStorage.setItem('roundCount', contador)
-
-        setRound.innerText = localStorage.getItem('roundCount')
-        getDataForGame(currentUrl)
+        contador = 1;
+        localStorage.setItem('roundCount', contador);
+        setRound.innerText = localStorage.getItem('roundCount');
     }
 }
 
 /* Função para carregar o round do game */
 function loandRound() {
-    if(localStorage.getItem('roundCount')) {
+    if (localStorage.getItem('roundCount')) {
         setRound.innerText = localStorage.getItem('roundCount')
     } else {
         setRound.innerText = 1
@@ -81,16 +73,40 @@ function loandRound() {
 }
 
 /* Função para Abrir e Fechar o card */
-function openCloseCard() {
+function openCloseCard(value, correctBreed) {
     const main = document.getElementById('main-container')
     const card = document.getElementById('card');
-    card.style.display = 'flex';
-
+    const alternatives = document.getElementById('alternatives')
     const nextButton = document.getElementById('next-button')
-    nextButton.addEventListener('click', () => {
-        card.style.display = 'none'
+
+    main.style.opacity = 0.3
+    card.style.display = 'flex';
+    alternatives.style.display = 'none'
+    nextButton.replaceWith(nextButton.cloneNode(true));
+
+    const title = document.getElementById('title-card')
+    const icon = document.getElementById('icon-card')
+    const msg = document.getElementById('msg-card')
+
+    if (value === 'win') {
+        soltarConfete()
+
+        title.innerText = 'Mandou bem!'
+        icon.className = "fa-solid fa-medal"
+        msg.innerText = 'Você venceu essa fase. Mas será que está pronto para o que vem a seguir?'
+    } else if (value === 'loss') {
+        title.innerText = 'Que pena!'
+        icon.className = "fa-solid fa-xmark"
+        msg.innerHTML = `A raça do cachorro era <span>${correctBreed}</span>. Mas não pare agora, tente mais uma vez.`
+    }
+
+    const newNextButton = document.getElementById('next-button');
+    
+    newNextButton.addEventListener('click', () => {
         main.style.opacity = 1
+        card.style.display = 'none'
         
+        alternatives.style.display = 'grid'
         getDataForGame(currentUrl)
     })
 }
