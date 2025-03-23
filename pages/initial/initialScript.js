@@ -14,22 +14,22 @@ async function getInfoRandomDog(Url) {
         const response = await fetch(`${Url}breeds/image/random`);
         const responseJson = await response.json();
 
+        // Obtendo a url da imagem
         const imgUrl = responseJson.message;
-        const baseUrl = "https://images.dog.ceo/breeds/";
 
-        // Exclui o conteúdo até a url da imagem
-        const mainPath = imgUrl.replace(baseUrl, "")
-
-        // Pega o elemento anterior a "/" e coloca em caixa alta
-        let breed = mainPath.split("/")[0];
-        breed = breed.toUpperCase()
+        // Traduzindo as raça
+        const regex = /breeds\/([^\/]+)\//;
+        const breed = translateBreeds(imgUrl.match(regex)[1]);
 
         // Substitui o "src" do elemento "img" pela url da imagem
         document.getElementById('img').src = imgUrl;
 
         // Substitui o conteúdo do elemento "name-dog" pela raça obtida
         let nameDog = document.getElementById('name-dog')
+        
+        // Atribuindo a url da imagem elemento
         nameDog.innerText = breed
+
     } catch (error) {
         console.log(error)
     }
