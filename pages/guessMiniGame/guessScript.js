@@ -28,10 +28,6 @@ async function getDataForGame(url) {
 
     const regex = /breeds\/([^\/]+)\//;
     let correctBreed = translateBreeds(randomDogUrl.match(regex)[1]);
-    
-    console.log(correctBreed)
-    console.log(randomDogUrl)
-
 
     let alternatives = infoDogs.map(url => translateBreeds(url.match(regex)[1]));
 
