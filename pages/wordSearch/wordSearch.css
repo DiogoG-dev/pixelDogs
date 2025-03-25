@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+    --color-1: #F2055C;
+    --color-2: #F24182;
+    --color-3: #049DD9;
+    --color-4: #F2B705;
+    --color-5: #F2EBDC;
+    --color-6: #373737;
+    --color-7: #FFFFFF;
+    --color-8: rgba(0, 0, 0, 0.33);
+}
+
+* {
+    margin: 0;
+    font-family: "Rowdies", sans-serif;
+    text-decoration: none;
+    color: var(--color-7);
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-5);
+}
+
+/* Conteúdo Principal */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-5);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 55%;
+}
+
+.round-count {
+    margin: 15px 0 30px 0;
+    color: #049DD9;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    font-size: 48px;
+    font-weight: bold;
+    border: solid 8px #049DD9;
+    border-radius: 50%;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #F2055C;
+}
+
+p {
+    font-size: 28px;
+    color: #F2055C;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    background-color: #373737;
+}
